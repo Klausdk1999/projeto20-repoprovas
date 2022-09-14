@@ -5,6 +5,7 @@
   "type": "module",
   "main": "server.js",
   "scripts": {
+    "build": "tsc && npx prisma migrate deploy",
     "test": "jest --no-cache",
     "dev": "nodemon src/server.ts",
     "start": "ts-node src/server.ts"
