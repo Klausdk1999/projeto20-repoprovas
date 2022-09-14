@@ -26,6 +26,7 @@ model Test {
   category Category @relation(fields: [categoryId], references: [id])
   teacherDiscipline teachersDisciplines @relation(fields: [teacherDisciplineId], references: [id])
   @@map("tests")
+  @@unique([name,pdfUrl,categoryId,teacherDisciplineId])
 }
 
 model Category {
