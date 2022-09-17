@@ -4,23 +4,21 @@ import * as testService from "../services/testService.js";
 export async function createTest(req: Request, res: Response) {
 	const data = req.body;
 
-	const testInfo = await testService.create(data);
+	await testService.newTest(data);
 
-	res.status(200).send(testInfo);
+	res.sendStatus(201);
 }
 
 export async function getBySubject(req: Request, res: Response) {
-	const data = req.body;
-
-	await testService.signup(data);
-
-	res.sendStatus(201);
+	
+	const testsBySubject = await testService.findTestsByDiscipline();
+   
+	res.status(200).send(testsBySubject);
 }
 
 export async function getByTeacher(req: Request, res: Response) {
-	const data = req.body;
-
-	await testService.signup(data);
-
-	res.sendStatus(201);
+	
+	const testsByTeacher =  await testService.findTestsByTeacher();
+	
+	res.status(200).send(testsByTeacher);
 }
