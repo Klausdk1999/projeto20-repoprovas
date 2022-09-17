@@ -1,4 +1,4 @@
-import * as testRepository from "../repositories/testRepository";
+import * as testRepository from "../repositories/testRepository.js";
 
 export async function findByNameCategory(name: string) {
 	const category = await testRepository.findCategoryByName(name);
