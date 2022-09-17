@@ -1,9 +1,9 @@
 export default async function testsFactory() {
 	return {
-		name: "Test 1",
+		name: "Test n",
 		pdfUrl: "https://bootcampra.notion.site/Projeto-20-RepoProvas-cb914aacfde04f96b210ba48d362a337",
 		category: "Prática",
-		discipline: "Humildade",
+		discipline: "Teste",
 		teacher: "Bruna Hamori",
 	};
 }

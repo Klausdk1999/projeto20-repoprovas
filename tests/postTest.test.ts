@@ -27,7 +27,7 @@ async function login() {
     return userLogin.text
 }
 
-describe("Test /tests routes", () => {
+describe("Test POST /test routes", () => {
 	it("return 201 - valid input create test", async () => {
 		const body = await testFactory();
 		const token = await login();

@@ -24,12 +24,12 @@ beforeEach(async () => {
   await prisma.$executeRaw`TRUNCATE TABLE "users"`;
 });
 
-describe("Testing route GET /discipline", () => {
+describe("Testing route GET /tests/subject", () => {
 
     it("return 200 - success get tests disicpline", async () => {
         const token = await login();
 
-        const result = await supertest(app).get("/test/disciplines").set({ Authorization: `Bearer ${token}`, Accept: "application/json" }).send();
+        const result = await supertest(app).get("/tests/subject").set({ Authorization: `Bearer ${token}`, Accept: "application/json" }).send();
         const status = result.status;
 
         expect(status).toEqual(200)
@@ -40,7 +40,7 @@ describe("Testing route GET /discipline", () => {
        
         const token = "wrong token";
 
-        const result = await supertest(app).get(`/test/disciplines`).set({ Authorization: `Bearer ${token}` }).send();
+        const result = await supertest(app).get(`/tests/subject`).set({ Authorization: `Bearer ${token}` }).send();
         expect(result.status).toEqual(401);
   });
 
